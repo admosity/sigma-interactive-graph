@@ -32,4 +32,4 @@ http://jcml.fr/~jacomyal/osdc2012-demo/
 Running
 -------
 
-Upload these files to whatever webserver you got and give it a whirl. The main logic is located in [js/main.js](blob/master/js/main.js)
+Upload these files to whatever webserver you got and give it a whirl. The main logic is located in [js/main.js](js/main.js)
