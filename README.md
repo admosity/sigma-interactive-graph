@@ -32,4 +32,4 @@ http://jcml.fr/~jacomyal/osdc2012-demo/
 Running
 -------
 
-Upload these files to whatever webserver you got and give it a whirl. This will automatically load with: [artic.gefx](artic.gefx). The main logic is located in [js/main.js](js/main.js).
+Upload these files to whatever webserver you got and give it a whirl. This will automatically load with: [artic.gexf](artic.gexf). The main logic is located in [js/main.js](js/main.js).
