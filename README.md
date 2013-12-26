@@ -28,3 +28,8 @@ Hash to link to node as in here:
 
 Be able to find node by name like here then zoom in to the node:
 http://jcml.fr/~jacomyal/osdc2012-demo/
+
+Running
+-------
+
+Upload these files to whatever webserver you got and give it a whirl. The main logic is located in [js/main.js]
