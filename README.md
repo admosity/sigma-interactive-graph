@@ -1,9 +1,10 @@
 sigma-interactive-graph
 =======================
 
-Some freelance work I've done with sigma in a couple hours.
+Some freelance work I've done with sigma.js in a couple hours.
 
-
+Features
+--------
 
 Load this data type:
 http://sigmajs.org/examples/gexf_example.html
@@ -22,9 +23,8 @@ http://jcml.fr/~jacomyal/osdc2012-demo/
 Click/Access node data like here:
 http://jcml.fr/~jacomyal/osdc2012-demo/
 
-If possible:
-- have hash to link to node as in here:
+Hash to link to node as in here:
 http://www.hellodata.eu/NDDL1/#Europe-Ecologie Les Verts
 
-- be able to find node by name like here then zoom in to the node:
+Be able to find node by name like here then zoom in to the node:
 http://jcml.fr/~jacomyal/osdc2012-demo/
