@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)https://127.0.0.1:3000/other -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Sigma.js freelance</title>
+  <link href="css/bs/bootstrap.min.css" rel="stylesheet"><link href="css/font-awesome.min.css" rel="stylesheet"><style type="text/css"></style></head>
+  
+  
+<body style="">
+
+  <div id="graph" class="sigma-parent">
+    <div id="graph-area" class="sigma-expand"><canvas id="sigma_edges_1" class="sigma_edges_canvas" width="1920px" height="500px" style="position: absolute;"></canvas><canvas id="sigma_nodes_1" class="sigma_nodes_canvas" width="1920px" height="500px" style="position: absolute;"></canvas><canvas id="sigma_labels_1" class="sigma_labels_canvas" width="1920px" height="500px" style="position: absolute;"></canvas><canvas id="sigma_hover_1" class="sigma_hover_canvas" width="1920px" height="500px" style="position: absolute;"></canvas><div id="sigma_monitor_1" class="sigma_monitor_div" width="1920px" height="500px" style="position: absolute;"></div><canvas id="sigma_mouse_1" class="sigma_mouse_canvas" width="1920px" height="500px" style="position: absolute;"></canvas></div>
+  </div>
+  <form>
+    <input id="search" type="text" placeholder="Search" name="query" class="form-control">
+  </form>
+  <div id="graph-data-display"></div>
+  <div id="graph-controls">
+    <div class="move">
+      <div tabindex="0" action="up" title="Move up in the graph" class="contains-icon move-icon">
+        <div class="icon-button icon-arrow-up"></div>
+      </div>
+      <div tabindex="0" action="left" title="Move left in the graph" class="contains-icon move-icon">
+        <div class="icon-button icon-arrow-left"></div>
+      </div>
+      <div tabindex="0" action="right" title="Move right in the graph" class="contains-icon move-icon">
+        <div class="icon-button icon-arrow-right"></div>
+      </div>
+      <div tabindex="0" action="down" title="Move down in the graph" class="contains-icon move-icon">
+        <div class="icon-button icon-arrow-down"></div>
+      </div>
+    </div>
+    <div class="zoom">
+      <div tabindex="0" action="out" title="Zoom out the graph" class="contains-icon zoom-icon">
+        <div class="icon-button icon-zoom-out"></div>
+      </div>
+      <div tabindex="0" action="refresh" title="Reset graph position" class="contains-icon">
+        <div class="icon-button refresh-icon icon-resize-full"></div>
+      </div>
+      <div tabindex="0" action="in" title="Zoom in the graph" class="contains-icon zoom-icon">
+        <div class="icon-button icon-zoom-in"></div>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/sigma.min.js"></script>
+  <script src="js/sigma.parseGexf.js"></script>
+  <script src="js/sigma.forceatlas2.js"></script>
+  <script src="js/jquery.smart_autocomplete.js"></script>
+  <script src="js/main.js"></script>
+  <style type="text/css">
+    #graph-controls{
+     position: relative;
+    }
+    
+    #graph-data-display {
+     float: left;
+     width: 75%;
+    }
+    
+    /* sigma.js context : */
+    .sigma-parent {
+     position: relative;
+     border-radius: 4px;
+     -moz-border-radius: 4px;
+     -webkit-border-radius: 4px;
+     background: #222;
+     height: 500px;
+    }
+    .sigma-expand {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     top: 0;
+     left: 0;
+    }
+    .buttons-container{
+     padding-bottom: 8px;
+     padding-top: 12px;
+    }
+    
+    /* controls */
+    
+    .move {
+     position: absolute;
+     width: 72px;
+     height: 72px;
+     top: 0;
+     right: 40px;
+     margin: 5px;
+    }
+    .contains-icon {
+     outline: none;
+     margin-left: 2px;
+     margin-top: 2px;
+     width: 21px;
+     height: 21px;
+     position: absolute;
+     cursor: pointer;
+     -webkit-box-shadow: inset 0 -1px 3px #555;
+     -moz-box-shadow:    inset 0 -1px 3px #555;
+     box-shadow:         inset 0 -1px 3px #555;
+     -webkit-border-radius: 5px;
+     -moz-border-radius:    5px;
+     border-radius:         5px;
+    }
+    .contains-icon:hover {
+     background-color: #f8f8f8;
+    }
+    .contains-icon:active {
+     background-color: #eeeeee;
+     -webkit-box-shadow: inset 0 1px 3px #555;
+     -moz-box-shadow:    inset 0 1px 3px #555;
+     box-shadow:         inset 0 1px 3px #555;
+    }
+    .contains-icon:focus {
+     -webkit-box-shadow: inset 0 -1px 3px #2965b0;
+     -moz-box-shadow:    inset 0 -1px 3px #2965b0;
+     box-shadow:         inset 0 -1px 3px #2965b0;
+    }
+    .contains-icon:focus:active {
+     -webkit-box-shadow: inset 0 1px 3px #2965b0;
+     -moz-box-shadow:    inset 0 1px 3px #2965b0;
+     box-shadow:         inset 0 1px 3px #2965b0;
+    }
+    .contains-icon > .icon-button {
+     font-size: 18px;
+     position: absolute;
+     left: 4px;
+     top: -2px;
+     width: 14px;
+     height: 14px;
+     -webkit-user-select: none;
+     -moz-user-select:    none;
+     user-select:         none;
+    }
+    .contains-icon:active > .icon-button {
+     top: 0;
+    }
+    .contains-icon[action="up"] {
+     top: 0;
+     left: 24px;
+    }
+    .contains-icon[action="down"] {
+     bottom: 0;
+     left: 24px;
+    }
+    .contains-icon[action="left"] {
+     top: 24px;
+     left: 0;
+    }
+    .contains-icon[action="right"] {
+     top: 24px;
+     right: 0;
+    }
+    
+    .zoom {
+     position: absolute;
+     width: 24px;
+     height: 72px;
+     top: 0;
+     right: 2px;
+     margin: 5px;
+    }
+    .contains-icon[action="out"] {
+     top: 0;
+     right: 0;
+    }
+    .contains-icon[action="in"] {
+     top: 48px;
+     right: 0;
+    }
+    .contains-icon[action="refresh"] {
+     top: 24px;
+     right: 0;
+    }
+    ul.smart_autocomplete_container {
+     font-family: Helvetica, sans-serif;
+     background: #fff;
+     list-style-type: none;
+     margin: 10px 0;
+     padding: 5px;
+     box-shadow: 0px 0px 12px #555;
+     max-height: 200px;
+     overflow: auto;
+     -webkit-border-radius: 5px;
+     -moz-border-radius:    5px;
+     border-radius:         5px;
+    }
+    ul.smart_autocomplete_container > li {
+     font-size: 14px;
+     cursor: pointer;
+     list-style: none;
+     overflow: hidden;
+     width: 100%;
+     white-space: nowrap;
+     text-overflow: ellipsis;
+    }
+    ul.smart_autocomplete_container > li.smart_autocomplete_highlight {
+     color: #fff;
+     background-color: #333;
+    }
+  </style>
+<ul class="smart_autocomplete_container" style="display:none"></ul></body></html>
