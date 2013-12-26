@@ -24,7 +24,7 @@ Click/Access node data like here:
 http://jcml.fr/~jacomyal/osdc2012-demo/
 
 Hash to link to node as in here:
-http://www.hellodata.eu/NDDL1/#Europe-Ecologie Les Verts
+[http://www.hellodata.eu/NDDL1/#Europe-Ecologie Les Verts](http://www.hellodata.eu/NDDL1/#Europe-Ecologie Les Verts)
 
 Be able to find node by name like here then zoom in to the node:
 http://jcml.fr/~jacomyal/osdc2012-demo/
